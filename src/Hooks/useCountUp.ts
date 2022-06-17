@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function easeOut(t: number) {
-  return t === 1 ? 1 : -Math.pow(2, -12 * t) + 1;
+  return t === 1 ? 1 : -Math.pow(2, -14 * t) + 1;
 }
 
 const DURATION = 2000;
@@ -15,12 +15,13 @@ const useCountUp = (num: number) => {
     let frame = 0;
     const counter = setInterval(() => {
       frame++;
-      const progress = easeOut(frame / totalFrame);
-      const currentNumber = Math.round(num * progress);
+      const progress = Number(easeOut(frame / totalFrame).toFixed(3));
+      const currentNumber = Math.floor(num * progress);
       if (num + 1 > currentNumber) {
         setCount(currentNumber);
       }
-      if (progress === 1) {
+      if (FRAME_RATE * 120 === frame || frame === totalFrame) {
+        setCount(num);
         clearInterval(counter);
       }
     }, FRAME_RATE);
