@@ -18,8 +18,7 @@ const AnimateBox = styled.div<{
   ${({ delay }) =>
     delay &&
     css`
-      animation: ${columnAnimate} 700ms;
-      animation-delay: ${delay};
+      animation: ${columnAnimate} 700ms forwards ${delay};
     `}
 `;
 

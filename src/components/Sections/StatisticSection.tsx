@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TripleTrophe from "../TripleTrophe";
 import Metric from "../Metric";
 import PlatformBadge from "../Awards";
+import AnimationHandler from "../../utils/AnimationHandler";
 
 const StatisticSectionWrapper = styled.div`
   display: flex;
@@ -17,10 +18,16 @@ const MetricPlatformWrapper = styled.div`
 const StatisticSection = () => {
   return (
     <StatisticSectionWrapper>
-      <TripleTrophe />
+      <AnimationHandler delay="0ms">
+        <TripleTrophe />
+      </AnimationHandler>
       <MetricPlatformWrapper>
-        <Metric />
-        <PlatformBadge />
+        <AnimationHandler delay="100ms">
+          <Metric />
+        </AnimationHandler>
+        <AnimationHandler delay="200ms">
+          <PlatformBadge />
+        </AnimationHandler>
       </MetricPlatformWrapper>
     </StatisticSectionWrapper>
   );
