@@ -15,7 +15,7 @@ const easeOutExpo: EaseOutExpoType = (timeDuration, duration) => {
 const useCountUp: UseCountUpType = (num, duration = 2000, trigger = true) => {
   const [count, setCount] = useState(0);
   let frameRef = 0;
-  let animationId;
+  let animationId = 0;
 
   const getNextNumber = (timestamp: number) => {
     const result = Number(easeOutExpo(timestamp, duration).toFixed(3));
@@ -27,17 +27,18 @@ const useCountUp: UseCountUpType = (num, duration = 2000, trigger = true) => {
     setCount(next);
     frameRef = next;
     animationId = requestAnimationFrame(countUpNumberAnimation);
-    if (timestamp >= duration) {
+    if (timestamp >= duration || frameRef >= num) {
       frameRef = num;
       setCount(num);
-    }
-    if (frameRef >= num) {
       cancelAnimationFrame(animationId);
     }
   };
+
   useEffect(() => {
     trigger && requestAnimationFrame(countUpNumberAnimation);
-  }, [num]);
+    return () => cancelAnimationFrame(animationId);
+  }, [num, trigger]);
+
   return count;
 };
 export default useCountUp;
