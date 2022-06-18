@@ -13,20 +13,33 @@ const columnAnimate = keyframes`
 
 const AnimateBox = styled.div<{
   delay: string;
+  trigger: boolean | null;
 }>`
   opacity: 0;
-  ${({ delay }) =>
-    delay &&
+  ${({ trigger, delay }) =>
+    trigger === null &&
     css`
-      animation: ${columnAnimate} 700ms forwards ${delay};
+      animation: ${columnAnimate} 700ms forwards;
+      animation-delay: ${delay};
+    `}
+  ${({ trigger, delay }) =>
+    trigger &&
+    css`
+      animation: ${columnAnimate} 700ms forwards;
+      animation-delay: ${delay};
     `}
 `;
 
 const AnimationHandler: React.FC<{
   children: React.ReactNode;
   delay: string;
-}> = ({ children, delay }) => {
-  return <AnimateBox delay={delay}>{children}</AnimateBox>;
+  trigger?: boolean;
+}> = ({ children, delay, trigger = null }) => {
+  return (
+    <AnimateBox delay={delay} trigger={trigger}>
+      {children}
+    </AnimateBox>
+  );
 };
 
 export default AnimationHandler;
