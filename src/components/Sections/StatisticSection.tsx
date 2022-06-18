@@ -12,7 +12,7 @@ const StatisticSectionWrapper = styled.div`
 const MetricPlatformWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 223px;
+  margin-left: 22.3rem;
 `;
 
 const StatisticSection = () => {

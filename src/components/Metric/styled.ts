@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MetricsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 1.4rem;
 `;
 export const MetricsContent = styled.div`
   font-size: ${({ theme }) => theme.fontSize.h3};

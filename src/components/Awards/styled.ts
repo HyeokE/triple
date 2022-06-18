@@ -10,7 +10,7 @@ const PLATFORM_TYPES = {
 type PlatformType = "google" | "apple";
 
 export const BadgeWrapper = styled.div`
-  margin-top: 50px;
+  margin-top: 5rem;
   white-space: nowrap;
 `;
 

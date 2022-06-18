@@ -9,8 +9,8 @@ export const TropheWrapper = styled.div`
 `;
 
 export const TropheImage = styled.img`
-  width: 400px;
-  height: 338px;
+  width: 40rem;
+  height: 33.8rem;
 `;
 export const TropheContent = styled.span`
   font-size: ${({ theme }) => theme.fontSize.body1};
@@ -18,5 +18,5 @@ export const TropheContent = styled.span`
   text-align: center;
   width: 100%;
   position: absolute;
-  bottom: 42px;
+  bottom: 4.2rem;
 `;
