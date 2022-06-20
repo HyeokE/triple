@@ -5,7 +5,7 @@
 ## 🛫 Getting Started
 
 ```bash
-> git clone https://github.com/HyeokE/triple-project
+> git clone https://github.com/HyeokE/triple
 
 > npm install
 
