@@ -1,5 +1,6 @@
 ## preview
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/61281239/174529902-bc0b7739-057f-448a-b30f-8002dded7885.gif)
 
 ## 🛫 Getting Started
 
@@ -45,15 +46,15 @@ vit은 개발환경에서 ESbuild를 사용함으로서 기존 번들러 대비 
 
  FPS를 60이라고 가정하고 각 프레임당 걸리는 시간을 계산해서 setInterval로 구현하면 되겠다고 생각했어요.
 
->Reference: [easeOut](https://spicyyoghurt.com/tools/easing-functions) 함수
+Reference: [easeOut](https://spicyyoghurt.com/tools/easing-functions) 함수
 
 ### 2. 숫자가 끝나는 시간이 전부 다른 이슈
 
->숫자 100은 종료시간이 `1300ms`, 숫자 720은 `2100 - 2200ms`으로 시간이 다르게 끝나는 이슈가 있었어요.
+>**숫자 100은 종료시간이 `1300ms`, 숫자 720은 `2100 - 2200ms`으로 시간이 다르게 끝나는 이슈가 있었어요.**
 
 -> `toFixed(3)`로 소숫점 3자리를 남긴 후 `Math.floor()`로 원하는 값에 늦게 근접할 수 있도록 조정했어요.
 
->`Math.floor()`로 진행할 경우 목표한 숫자가 100이라고 했을 때 99에서 오래 머물게 되는 문제가 있었어요.
+>**`Math.floor()`로 진행할 경우 목표한 숫자가 100이라고 했을 때 99에서 오래 머물게 되는 문제가 있었어요.**
 
 -> 지속시간이 2초가 넘어갈 경우 목표한 숫자를 할당하는 방법으로 해결했어요. 
 
