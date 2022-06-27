@@ -66,3 +66,18 @@ vit은 개발환경에서 ESbuild를 사용함으로서 기존 번들러 대비 
 > RAF의 콜백의 수는 보통 1초에 60회지만, 일반적으로 대부분의 브라우저에서는 W3C 권장사항에 따라 그 수가 디스플레이 주사율과 일치하게됩니다
 
 Reference: [RAF](https://developer.mozilla.org/ko/docs/Web/API/Window/requestAnimationFrame)
+
+### 4. 만약 240Hz나 360Hz 모니터를 사용하는 사람에게는 과한 리소스 투입이 아닐까?
+
+-> throttle 적용으로 60Hz 프레임 고정을 진행해봤어요.
+
+*throttle 적용 전*
+
+![스크린샷 2022-06-27 오후 11 36 54](https://user-images.githubusercontent.com/61281239/175967361-ebe387ac-ba36-4954-85df-9117ddf45b2f.png)
+
+*throttle 적용 후*
+
+![스크린샷 2022-06-27 오후 11 36 45](https://user-images.githubusercontent.com/61281239/175967347-c7b1183e-895b-4f33-9537-1cccf6a97826.png)
+
+
+
